@@ -14,6 +14,7 @@ const handler = NextAuth({
         password: {
           label: "Password",
           type: "password",
+          placeholder: "Enter your password",
         },
       },
       async authorize(credentials) {
@@ -21,7 +22,7 @@ const handler = NextAuth({
         const user = {
           id: 59640,
           email: "sohail@gmail.com",
-          password: "test123 ",
+          password: "test123",
         };
         if (
           credentials?.email === user.email &&
