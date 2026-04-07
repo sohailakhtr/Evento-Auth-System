@@ -8,9 +8,10 @@
     "start": "next start"
   },
   "dependencies": {
-    "@heroui/react": "^3.0.2",
     "@heroui/styles": "^3.0.2",
+    "@nextui-org/react": "^2.6.11",
     "next": "16.2.2",
+    "next-auth": "^4.24.13",
     "react": "19.2.4",
     "react-dom": "19.2.4"
   },

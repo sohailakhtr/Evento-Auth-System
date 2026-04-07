@@ -1,90 +1,77 @@
 "use client";
 
-import Link from "next/link";
-import { useRouter } from "next/navigation";
 import {
+  Navbar,
+  NavbarBrand,
+  NavbarContent,
   Dropdown,
   DropdownItem,
   DropdownTrigger,
   DropdownMenu,
   Button,
-} from "@heroui/react";
+} from "@nextui-org/react";
+
+import Link from "next/link";
 
 export default function NavComponent() {
-  const router = useRouter();
-
   return (
-    <nav className="flex justify-between items-center px-4 py-2 bg-gray-500 border-b-4 border-slate-400">
-      {/* Logo */}
-      <Link href="/" className="text-2xl text-white font-bold">
-        Evento
-      </Link>
+    <Navbar
+      // shouldHideOnScroll
+      maxWidth="full"
+      isBordered
+      className="bg-gray-900 border-b-4 border-slate-400 py-4 p-4"
+    >
+      {/* LEFT */}
+      <NavbarBrand className="flex-1">
+        <Link href="/" className="text-2xl text-white ">
+          Event0
+        </Link>
+      </NavbarBrand>
 
-      {/* Right Side */}
-      <div className="flex flex-col items-center gap-2">
-        <Dropdown placement="bottom">
+      {/* RIGHT */}
+      <NavbarContent className="w-full flex justify-end">
+        <Dropdown placement="bottom-end">
           <DropdownTrigger>
-            <Button variant="bordered" className="text-white">
+            <Button className=" text-1xl text-white cursor-pointer border-1 border-white rounded">
               Menu
             </Button>
           </DropdownTrigger>
 
-          <DropdownMenu aria-label="Profile actions" className="w-40">
+          <DropdownMenu
+            aria-label="Profile Actions"
+            variant="flat"
+            className="bg-white rounded p-3"
+          >
             <DropdownItem
               key="register"
-              onClick={() => router.push("/register")}
+              className="
+      px-4 py-1 rounded
+      hover:bg-gray-100
+      focus:outline-none
+      data-[focus-visible=true]:outline-none
+      data-[focus-visible=true]:ring-0
+    "
             >
-              Register
+              <Link href="/register" className="p-2 block">
+                Register
+              </Link>
             </DropdownItem>
 
-            <DropdownItem key="logout">Log out</DropdownItem>
+            <DropdownItem
+              key="log_out"
+              className="
+      px-4 py-1 rounded
+      hover:bg-gray-100
+      focus:outline-none
+      data-[focus-visible=true]:outline-none
+      data-[focus-visible=true]:ring-0
+    "
+            >
+              Log out
+            </DropdownItem>
           </DropdownMenu>
         </Dropdown>
-      </div>
-    </nav>
+      </NavbarContent>
+    </Navbar>
   );
 }
-
-// 'use client'
-// import { Navbar, NavbarBrand, NavbarContent, Dropdown,DropdownItem,DropdownTrigger,DropdownMenu,Button } from "@nextui-org/react"
-// import Link from 'next/link';
-
-// export default function NavComponent(){
-//     return(
-//         <Navbar
-//             shouldHideOnScroll
-//             isBordered
-//             className="bg-gray-900 border-b-4 border-slate-400"
-//         >
-//             <NavbarBrand>
-//                 <Link
-//                     href="/"
-//                     className="text-inherit text-2xl text-white"
-//                 >
-//                     Event0
-//                 </Link>
-//             </NavbarBrand>
-
-//             <NavbarContent as="div" justify="end">
-//                 <Dropdown placement="bottom-end">
-//                     <DropdownTrigger>
-//                         <Button variant="bordered" className="text-white">
-//                             Menu
-//                         </Button>
-//                     </DropdownTrigger>
-
-//                     <DropdownMenu aria-label="Profile actions" variant="flat">
-//                         <DropdownItem key="register">
-//                             <Link href="/register">Register</Link>
-//                         </DropdownItem>
-//                         <DropdownItem key="log_out">
-//                             Log out
-//                         </DropdownItem>
-//                     </DropdownMenu>
-
-//                 </Dropdown>
-//             </NavbarContent>
-
-//         </Navbar>
-//     )
-// }
