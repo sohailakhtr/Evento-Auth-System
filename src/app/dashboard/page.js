@@ -1,10 +1,12 @@
 import { getServerSession } from "next-auth/next";
-import { option } from "@/api/auth/[...nextauth]/option";
-export default async function dashboardPage() {
-  const session = await getServerSession();
+import { option } from "@/app/api/auth/[...nextauth]/option";
+export default async function DashboardPage() {
+  const session = await getServerSession(option);
+  console.log(session);
+
   return (
     <>
-      <h1>dashboardPage</h1>
+      <h1>DashboardPage</h1>
     </>
   );
 }

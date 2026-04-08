@@ -42,3 +42,4 @@ export const option = {
     buttonText: "", // Hex color code
   },
 };
+export { handler as GET, handler as POST };

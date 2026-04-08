@@ -47,7 +47,7 @@ const anton = Anton({
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning={true}>
       {/* ❗ YAHAN APPLY KARNA ZAROORI HAI */}
       <body className={`${roboto.variable} ${anton.variable}`}>
         <Nav />
