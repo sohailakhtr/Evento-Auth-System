@@ -43,6 +43,30 @@ export default function NavComponent() {
             className="bg-white rounded p-3"
           >
             <DropdownItem
+              key="dashboard"
+              className="
+      px-4 py-1 rounded
+      hover:bg-gray-100
+      focus:outline-none
+      data-[focus-visible=true]:outline-none
+      data-[focus-visible=true]:ring-0
+    "
+            >
+              <Link href="/dashboard">Dashboard</Link>
+            </DropdownItem>
+            <DropdownItem
+              key="posts"
+              className="
+      px-4 py-1 rounded
+      hover:bg-gray-100
+      focus:outline-none
+      data-[focus-visible=true]:outline-none
+      data-[focus-visible=true]:ring-0
+    "
+            >
+              <Link href="/posts">Posts</Link>
+            </DropdownItem>
+            <DropdownItem
               key="register"
               className="
       px-4 py-1 rounded
@@ -52,7 +76,7 @@ export default function NavComponent() {
       data-[focus-visible=true]:ring-0
     "
             >
-              <Link href="/register" className="p-2 block">
+              <Link href="/register" className=" block">
                 Register
               </Link>
             </DropdownItem>
