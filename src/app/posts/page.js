@@ -1,7 +1,19 @@
-export default function postsPage() {
+"use client";
+// import { useSession } from "next-auth/react"
+// import { redirect } from "next/dist/server/api-utils";
+
+export default function PostsPage() {
+  // const {data: session, status} = useSession({
+  //     required:true,
+  //     onUnauthenticated(){
+  //         redirect('/api/signin')
+  //     }
+  // });
+
   return (
     <>
-      <h1>postsPage</h1>
+      <h1>POST PAGE</h1>
+      <p>Welcome to posts</p>
     </>
   );
 }

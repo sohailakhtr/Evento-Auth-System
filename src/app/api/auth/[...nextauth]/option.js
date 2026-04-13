@@ -1,8 +1,13 @@
-import GithubProvider from "next-auth/providers/github";
+import GitHubProvider from "next-auth/providers/github";
 import CredentialsProvider from "next-auth/providers/credentials";
 
-export const option = {
+export const options = {
   providers: [
+    GitHubProvider({
+      clientId: process.env.GITHUB_ID,
+      clientSecret: process.env.GITHUB_SECRET,
+    }),
+
     CredentialsProvider({
       name: "Credentials",
       credentials: {
@@ -18,12 +23,13 @@ export const option = {
         },
       },
       async authorize(credentials) {
-        /// go to DB and sign in or register
+        /// go to the DB and sign in or register
         const user = {
-          id: 59640,
-          email: "sohail@gmail.com",
-          password: "test123",
+          id: 98673,
+          email: "francis@gmail.com",
+          password: "testing123",
         };
+
         if (
           credentials?.email === user.email &&
           credentials?.password === user.password
@@ -36,10 +42,9 @@ export const option = {
     }),
   ],
   theme: {
-    colorScheme: "dark", // "auto" | "dark" | "light"
+    colorScheme: "light", // "auto" | "dark" | "light"
     brandColor: "", // Hex color code
     logo: "", // Absolute URL to image
     buttonText: "", // Hex color code
   },
 };
-export { handler as GET, handler as POST };

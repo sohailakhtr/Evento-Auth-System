@@ -2,6 +2,7 @@
 import { Roboto, Anton } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/nav/header";
+import AuthProvider from "@/providers/authProvider";
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
 //   subsets: ["latin"],
@@ -49,9 +50,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning={true}>
       {/* ❗ YAHAN APPLY KARNA ZAROORI HAI */}
+
       <body className={`${roboto.variable} ${anton.variable}`}>
-        <Nav />
-        {children}
+        <AuthProvider>
+          <Nav />
+          {children}
+        </AuthProvider>
       </body>
     </html>
   );
