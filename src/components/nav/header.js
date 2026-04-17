@@ -12,27 +12,27 @@ import {
 } from "@nextui-org/react";
 
 import Link from "next/link";
+// import { signOut } from "next-auth/react";
 
 export default function NavComponent() {
   return (
     <Navbar
-      // shouldHideOnScroll
       maxWidth="full"
       isBordered
       className="bg-gray-900 border-b-4 border-slate-400 py-4 p-4"
     >
       {/* LEFT */}
       <NavbarBrand className="flex-1">
-        <Link href="/" className="text-2xl text-white ">
+        <Link href="/" className="text-2xl text-white">
           Event0
         </Link>
       </NavbarBrand>
 
       {/* RIGHT */}
       <NavbarContent className="w-full flex justify-end">
-        <Dropdown placement="bottom-end">
+        <Dropdown className="flex flex-col">
           <DropdownTrigger>
-            <Button className=" text-1xl text-white cursor-pointer border-1 border-white rounded">
+            <Button className="text-1xl text-white cursor-pointer border-1 border-white rounded">
               Menu
             </Button>
           </DropdownTrigger>
@@ -45,54 +45,59 @@ export default function NavComponent() {
             <DropdownItem
               key="dashboard"
               className="
-      px-4 py-1 rounded
-      hover:bg-gray-100
-      focus:outline-none
-      data-[focus-visible=true]:outline-none
-      data-[focus-visible=true]:ring-0
-    "
+                px-4 py-1 rounded
+                hover:bg-gray-100
+                focus:outline-none
+                data-[focus-visible=true]:outline-none
+                data-[focus-visible=true]:ring-0
+              "
             >
               <Link href="/dashboard">Dashboard</Link>
             </DropdownItem>
+
             <DropdownItem
               key="posts"
               className="
-      px-4 py-1 rounded
-      hover:bg-gray-100
-      focus:outline-none
-      data-[focus-visible=true]:outline-none
-      data-[focus-visible=true]:ring-0
-    "
+                px-4 py-1 rounded
+                hover:bg-gray-100
+                focus:outline-none
+                data-[focus-visible=true]:outline-none
+                data-[focus-visible=true]:ring-0
+              "
             >
               <Link href="/posts">Posts</Link>
             </DropdownItem>
+
             <DropdownItem
               key="register"
               className="
-      px-4 py-1 rounded
-      hover:bg-gray-100
-      focus:outline-none
-      data-[focus-visible=true]:outline-none
-      data-[focus-visible=true]:ring-0
-    "
+                px-4 py-1 rounded
+                hover:bg-gray-100
+                focus:outline-none
+                data-[focus-visible=true]:outline-none
+                data-[focus-visible=true]:ring-0
+              "
             >
-              <Link href="/register" className=" block">
+              <Link href="/register" className="block">
                 Register
               </Link>
             </DropdownItem>
 
-            <DropdownItem
+            {/* 🔥 LOGOUT (FIXED) */}
+            {/* <DropdownItem
               key="log_out"
+              onClick={() => signOut({ callbackUrl: "/register" })}
               className="
-      px-4 py-1 rounded
-      hover:bg-gray-100
-      focus:outline-none
-      data-[focus-visible=true]:outline-none
-      data-[focus-visible=true]:ring-0
-    "
+                px-4 py-1 rounded
+                hover:bg-gray-100
+                cursor-pointer
+                focus:outline-none
+                data-[focus-visible=true]:outline-none
+                data-[focus-visible=true]:ring-0
+              "
             >
               Log out
-            </DropdownItem>
+            </DropdownItem> */}
           </DropdownMenu>
         </Dropdown>
       </NavbarContent>
