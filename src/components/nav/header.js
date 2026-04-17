@@ -12,7 +12,7 @@ import {
 } from "@nextui-org/react";
 
 import Link from "next/link";
-// import { signOut } from "next-auth/react";
+import { signOut } from "next-auth/react";
 
 export default function NavComponent() {
   return (
@@ -84,7 +84,7 @@ export default function NavComponent() {
             </DropdownItem>
 
             {/* 🔥 LOGOUT (FIXED) */}
-            {/* <DropdownItem
+            <DropdownItem
               key="log_out"
               onClick={() => signOut({ callbackUrl: "/register" })}
               className="
@@ -97,7 +97,7 @@ export default function NavComponent() {
               "
             >
               Log out
-            </DropdownItem> */}
+            </DropdownItem>
           </DropdownMenu>
         </Dropdown>
       </NavbarContent>
