@@ -86,7 +86,7 @@ export default function NavComponent() {
             {/* 🔥 LOGOUT (FIXED) */}
             <DropdownItem
               key="log_out"
-              onClick={() => signOut({ callbackUrl: "/register" })}
+              onPress={() => signOut({ callbackUrl: "/register" })}
               className="
                 px-4 py-1 rounded
                 hover:bg-gray-100
